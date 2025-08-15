@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSL Provisioning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      padding: 40px; /* increased padding */
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 800px; /* increased from 400px */
+      width: 100%;
+      margin: 0 auto; /* center the container */
+    }
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 14px;
+      //text-align: center;
+      white-space: pre-line; /* allows line breaks with \n */
+    }
+    #goHomeBtn {
+  margin-top: 20px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #4dc3ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#goHomeBtn:hover {
+  background-color: #30b4f0;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Download SSL Certificate</h2>
+    <input type="text" id="requestidInput" placeholder="Enter Request ID (e.g. 8f307e03-cd5b-4e60-acca-c809b669bf6a)" />
+    <button onclick="downloadSSL()">Download SSL</button>
+    <div class="message" id="message"></div>
+    <button id="goHomeBtn">🏠 Go Back to Home</button>
+  </div>
+
+  <script>
+    function downloadSSL() {
+      const requestid = document.getElementById('requestidInput').value.trim();
+      const messageBox = document.getElementById('message');
+
+      if (!requestid) {
+        messageBox.textContent = 'Please enter Request ID.';
+        messageBox.style.color = 'red';
+        return;
+      }
+
+      messageBox.textContent = 'Downloading SSL for ' + requestid + '...';
+      messageBox.style.color = 'black';
+
+      // Simulated API call (replace this with real backend call)
+      fetch('https://fcbs2hwvwkqwm6pwn2rvqwr6ru0quokd.lambda-url.ap-south-1.on.aws/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ request_id: requestid })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to Download SSL.');
+        return response.json();
+      })
+      .then(data => {
+        const { certificate, private_key } = data;
+
+        messageBox.style.color = 'green';
+        messageBox.innerHTML = `
+            <strong>✅ SSL Downloaded Successfully</strong><br><br>
+            <strong>Certificate:</strong><br>
+            <pre>${certificate}</pre>
+            <strong>Private Key:</strong><br>
+            <pre>${private_key}</pre>
+        `;
+      })
+      .catch(error => {
+        messageBox.textContent = 'Error: ' + error.message;
+        messageBox.style.color = 'red';
+      });
+    }
+    document.getElementById('goHomeBtn').onclick = function () {
+        window.location.href = '/'; // Redirect to home
+    };
+  </script>
+</body>
+</html>

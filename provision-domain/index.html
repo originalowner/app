@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Subdomain Provider</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Get Your Free Subdomain</h1>
+    <form id="subdomain-form">
+      <label for="subdomain">Choose Your Subdomain:</label>
+      <div class="input-group">
+        <input type="text" id="subdomain" name="subdomain" required placeholder="yourname">
+        <span>.example.com</span> <!-- Your main domain -->
+      </div>
+      <label for="target">Target URL/IP:</label>
+      <input type="text" id="target" name="target" required placeholder="e.g. 123.45.67.89 or yoursite.com">
+      <button type="submit">Request Subdomain</button>
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

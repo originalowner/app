@@ -3,13 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Simple Site</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>OpenFreeHost - Free Hosting & Domains</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #4dc3ff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .hero {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: #e6f4ff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .features {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-around;
+    }
+    .feature {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .button-row {
+        display: flex;
+        gap: 1rem; /* space between buttons */
+        margin-top: 2rem;
+  justify-content: center; /* center buttons horizontally */
+}
+
+.ssl-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #4dc3ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ssl-button:hover {
+  background-color: #30b4f0;
+}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, GitHub Pages!</h1>
-  <button onclick="sayHello()">Click me</button>
 
-  <script src="script.js"></script>
+  <header>
+    <h1>OpenFreeHost</h1>
+    <p>Free & Open Source Hosting, Domains, SSL, and Serverless Apps</p>
+    <nav>
+      <a href="register">Register</a>
+      <a href="login">Login</a>
+      <a href="about-us">About Us</a>
+      <a href="contact-us">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Get SSL for Free</h1>
+    <p>Step 1 -: Order Free SSL Certificate</p>
+    <p>Step 2 -: Copy Request ID and Validate DNS for Free SSL Certificate</p>
+    <p>Step 3 -: Download Free SSL Certificate</p>
+    <h6>Note -: Request ID is mandatory to Download Free SSL Certificate</h6>
+
+    <!-- Button container using flexbox -->
+    <div class="button-row">
+        <button class="ssl-button" onclick="window.location.href='/provision-ssl/order.html';">
+            Order Free SSL →
+        </button>
+
+        <button class="ssl-button" onclick="window.location.href='/provision-ssl/download.html';">
+            Download Free SSL →
+        </button>
+    </div>
+  </section>
+
+  <section class="hero">
+    <h1>Host Your Projects for Free</h1>
+    <p>Free domains, SSL certificates, serverless functions, and static site hosting. Open source and community-supported.</p>
+    <a href="/provision-hosting">
+        <button style="
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            background-color: #4dc3ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#30b4f0'" onmouseout="this.style.backgroundColor='#4dc3ff'">
+        🚀 Provision Free Hosting →
+        </button>
+    </a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>🖥 Free Hosting</h3>
+      <p>Deploy static sites and serverless apps without any cost or limits on creativity.</p>
+    </div>
+    <div class="feature">
+      <h3>🌐 Free Domains</h3>
+      <p>Get free subdomains or bring your own custom domain at no cost.</p>
+    </div>
+    <div class="feature">
+      <h3>🔒 SSL Certificates</h3>
+      <p>Automatically provision and renew HTTPS certificates for your projects.</p>
+    </div>
+    <div class="feature">
+      <h3>⚡ Serverless Functions</h3>
+      <p>Run backend logic securely and scalably, without managing infrastructure.</p>
+    </div>
+    <div class="feature">
+      <h3>💻 Open Source</h3>
+      <p>100% open source platform. Fork it, improve it, contribute to the community.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 OpenFreeHost. Open Source for Everyone.</p>
+  </footer>
+
 </body>
 </html>

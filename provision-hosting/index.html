@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpenFreeHost - Free Hosting & Domains</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>OpenFreeHost</h1>
+    <p>Free & Open Source Hosting, Domains, SSL, and Serverless Apps</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Get Started for Free</h2>
+      <p>No credit card needed. No ads. 100% open source.</p>
+    </section>
+
+    <section class="form-section">
+      <form id="signupForm">
+        <h3>Provision Your Free Hosting</h3>
+        
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required/>
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required/>
+
+        <label for="domain">Preferred Subdomain *</label>
+        <input type="text" id="domain" name="domain" placeholder="yourname.openfreehost.org" required/>
+
+        <label for="usecase">Briefly describe your project *</label>
+        <textarea id="usecase" name="usecase" required></textarea>
+
+        <label>
+          <input type="checkbox" id="agree" required/> I agree to the <a href="#">terms of service</a>.
+        </label>
+
+        <button type="submit">Provision My Free Hosting</button>
+        <p id="formStatus" class="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 OpenFreeHost. Open Source for Everyone.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
