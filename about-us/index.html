@@ -1,1 +1,147 @@
-Hello, This is About Us!!!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us – OpenFreeHost</title>
+  <style>
+    /* General Reset */
+    body, h1, h2, p, ul {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f9f9f9;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .about-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      padding: 40px 20px;
+    }
+    .feature-card {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 6px;
+      transition: transform .2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .team-cta {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .team-cta button {
+      background: #007acc;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .team-cta button:hover {
+      background: #005fa3;
+    }
+
+    /* Hidden expanded text */
+    .more-info {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <section class="hero">
+      <h1>About OpenFreeHost</h1>
+      <p>Empowering creativity with free, open-source hosting, domains, SSL, and serverless functions.</p>
+      <p class="more-info" id="moreMission">
+        Our mission is to make web deployment frictionless and accessible to everyone—from hobbyists to enterprises—by offering a zero-cost platform that remains fully open and community-driven.
+      </p>
+      <button id="toggleMissionBtn">Learn More</button>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3>Free Hosting</h3>
+        <p>Deploy static sites and serverless apps effortlessly—no fee, no limits.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Free Domains</h3>
+        <p>Use a free subdomain or connect your own custom domain at no extra cost.</p>
+      </div>
+      <div class="feature-card">
+        <h3>SSL Certificates</h3>
+        <p>Automatic HTTPS for your projects, with auto-provisioning and renewal.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Serverless Functions</h3>
+        <p>Run backend logic securely without managing infrastructure.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Open Source</h3>
+        <p>Fully transparent and community-driven—fork, contribute, and improve the platform.</p>
+      </div>
+    </section>
+
+    <section class="team-cta">
+      <p>Interested in contributing or joining the team?</p>
+      <button onclick="window.open('https://github.com/originalowner/app', '_blank')">
+        Visit Our GitHub & Contribute
+      </button>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('toggleMissionBtn').addEventListener('click', function() {
+      const more = document.getElementById('moreMission');
+      const isHidden = (more.style.display === 'none' || more.style.display === '');
+      more.style.display = isHidden ? 'block' : 'none';
+      this.textContent = isHidden ? 'Show Less' : 'Learn More';
+    });
+  </script>
+</body>
+</html>
