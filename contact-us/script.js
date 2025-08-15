@@ -1,5 +1,5 @@
 async function sendAcknowledgmentEmail() {
-  const apiUrl = "https://8k4lke68zk.execute-api.ap-south-1.amazonaws.com/myprodstage_ppppp"; // Replace with your actual API Gateway URL
+  const apiUrl = "https://zn4viza0p5.execute-api.ap-south-1.amazonaws.com/botmystage/sendmail"; // Replace with your actual API Gateway URL
 
   const requestBody = {
     email: "recipient@example.com",
